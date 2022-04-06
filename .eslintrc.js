@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb', 'plugin:react/recommended'],
+  extends: [
+    'airbnb',
+    'plugin:react/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -21,6 +26,25 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'react/function-component-definition': 0,
     'prettier/prettier': 0,
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', ['parent', 'sibling'], 'index'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'builtin',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: false,
+        },
+        'newlines-between': 'always',
+      },
+    ],
   },
   settings: {
     'import/resolver': {
