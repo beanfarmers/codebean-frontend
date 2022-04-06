@@ -24,8 +24,15 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
+      typescript: {},
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      alias: {
+        map: [
+          ['@src', './src'],
+          ['@styles', './styles'],
+        ],
       },
     },
   },
