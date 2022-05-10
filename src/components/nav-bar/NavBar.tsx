@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBarTextButton from '@src/components/NavBar/NavBarTextButton';
+import NavBarTextButton from '@src/components/nav-bar/NavBarTextButton';
 
 const NavBar = () => (
   <div className='flex h-12 px-5 bg-gray-800'>

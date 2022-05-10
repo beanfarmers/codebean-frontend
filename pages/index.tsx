@@ -3,7 +3,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import NavBar from '@src/components/NavBar';
+import NavBar from '@src/components/nav-bar/NavBar';
 
 const Home: NextPage = () => (
   <div>

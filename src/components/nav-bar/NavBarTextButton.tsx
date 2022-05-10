@@ -8,16 +8,12 @@ interface Props {
   className?: string;
 }
 
-const NavBarTextButton = ({ text, url, className }: Props) => (
+const NavBarTextButton = ({ text, url, className = '' }: Props) => (
   <Link href={url} passHref>
     <a href='replace' className={className}>
       <span className='my-auto text-gray-200'>{text}</span>
     </a>
   </Link>
 );
-
-NavBarTextButton.defaultProps = {
-  className: '',
-};
 
 export default NavBarTextButton;

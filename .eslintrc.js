@@ -25,6 +25,7 @@ module.exports = {
     'react/prefer-stateless-function': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/function-component-definition': 0,
+    'react/require-default-props': 0,
     'prettier/prettier': 0,
     'import/order': [
       'error',
