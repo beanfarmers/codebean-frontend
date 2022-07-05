@@ -3,6 +3,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import Footer from '@src/components/footer/Footer';
 import NavBar from '@src/components/nav-bar/NavBar';
 
 const Home: NextPage = () => (
@@ -25,16 +26,7 @@ const Home: NextPage = () => (
       </div>
     </main>
 
-    <footer className='flex flex-1 justify-center items-center py-5 px-0 bg-gray-800'>
-      <a
-        href='https://github.com/litsynp'
-        target='_blank'
-        rel='noopener noreferrer'
-        className='flex justify-center items-center text-gray-200'
-      >
-        CodeBean by litsynp
-      </a>
-    </footer>
+    <Footer />
   </div>
 );
 
