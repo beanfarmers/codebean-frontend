@@ -11,7 +11,7 @@ const NavBar = () => (
     />
     <div className='flex ml-12 space-x-10 font-bold'>
       <NavBarTextButton text='Codes' url='/codes' className='my-auto' />
-      <NavBarTextButton text='Community' url='/codes' className='my-auto' />
+      <NavBarTextButton text='Community' url='/community' className='my-auto' />
     </div>
   </div>
 );
