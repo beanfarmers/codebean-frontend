@@ -16,7 +16,7 @@ function SideBar() {
           <span>litsynp</span>
         </div>
         <Divider />
-        <ul className='space-y-2'>
+        <ul className='space-y-2 text-gray-500'>
           <SideBarHoverableMenu text='Dashboard' />
           <SideBarHoverableMenu text='My Codes' />
           <SideBarHoverableMenu text='Recent Codes' />
@@ -26,7 +26,7 @@ function SideBar() {
       <div className='space-y-3'>
         <div className='font-bold text-lg'>Popular Languages</div>
         <Divider />
-        <ul className='space-y-2'>
+        <ul className='space-y-2 text-gray-500'>
           <SideBarHoverableMenu text='Python' />
           <SideBarHoverableMenu text='Java' />
           <SideBarHoverableMenu text='Kotlin' />

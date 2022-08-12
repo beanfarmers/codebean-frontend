@@ -16,7 +16,7 @@ function SideBar() {
           <span>litsynp</span>
         </div>
         <Divider />
-        <ul className='space-y-2'>
+        <ul className='space-y-2 text-gray-500'>
           <SideBarHoverableMenu text='My posts' />
           <SideBarHoverableMenu text='Bookmarks' />
         </ul>
@@ -24,7 +24,7 @@ function SideBar() {
       <div className='space-y-3'>
         <div className='font-bold text-lg'># Popular Tags</div>
         <Divider />
-        <ul className='space-y-2'>
+        <ul className='space-y-2 text-gray-500'>
           <SideBarHoverableMenu text='# Python' />
           <SideBarHoverableMenu text='# Java' />
           <SideBarHoverableMenu text='# Kotlin' />
