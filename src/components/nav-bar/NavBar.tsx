@@ -3,7 +3,7 @@ import React from 'react';
 import NavBarTextButton from '@src/components/nav-bar/NavBarTextButton';
 
 const NavBar = () => (
-  <div className='flex h-12 px-5 bg-gray-800'>
+  <div className='flex h-16 px-5 bg-gray-800'>
     <NavBarTextButton
       text='CodeBean'
       url='/!'
