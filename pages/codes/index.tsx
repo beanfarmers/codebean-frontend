@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { SupportedLanguages } from 'react-code-blocks/src/types';
+
+import CodeBlock from '@src/components/codeblock/CodeBlock';
 import Footer from '@src/components/footer/Footer';
 import NavBar from '@src/components/nav-bar/NavBar';
 
@@ -55,7 +58,13 @@ function SideBar() {
   );
 }
 
-function CodeItem({ code = '' }: { code: string }) {
+function CodeItem({
+  language = 'text',
+  code = '',
+}: {
+  language: SupportedLanguages;
+  code: string;
+}) {
   return (
     <div className='bg-white border rounded-xl p-5 space-y-3'>
       <div className='font-bold text-lg w-full flex items-center space-x-2'>
@@ -69,44 +78,61 @@ function CodeItem({ code = '' }: { code: string }) {
         </div>
       </div>
       <Divider />
-      <div className='w-full p-3 h-full bg-black text-green-400 rounded-lg whitespace-pre-wrap'>
-        {code}
-      </div>
+      <CodeBlock language={language} code={code} />
     </div>
   );
 }
 
-const CodePage = () => (
-  <div>
-    <NavBar />
-    <div className='h-screen bg-white flex text-gray-800'>
-      <SideBar />
-      <main className='h-full w-full bg-gray-100 p-8 space-y-5'>
-        <CodeItem
-          code={`#include <stdio.h>
+const CodePage = () => {
+  const [codeItemList] = useState<
+    {
+      id: number;
+      language: SupportedLanguages;
+      code: string;
+    }[]
+  >([
+    {
+      id: 1,
+      language: 'c',
+      code: `#include <stdio.h>
 
 int main() {
-    printf("Hello World!");
-    return 0;
-}`}
-        />
-
-        <CodeItem code={'print("Hello Python!")'} />
-
-        <CodeItem
-          code={`package com.litsynp.demo;
-          
+  printf("Hello World!");
+  return 0;
+}`,
+    },
+    {
+      id: 2,
+      language: 'python',
+      code: 'print("Hello Python!")',
+    },
+    {
+      id: 3,
+      language: 'java',
+      code: `package com.litsynp.demo;
+        
 public class Main {
-    
-    public static void main(String[] args) {
-        System.out.println("Hello Java!");
-    }
-}`}
-        />
-      </main>
-    </div>
-    <Footer />
-  </div>
-);
+  
+  public static void main(String[] args) {
+      System.out.println("Hello Java!");
+  }
+}`,
+    },
+  ]);
 
+  return (
+    <div>
+      <NavBar />
+      <div className='h-screen bg-white flex text-gray-800'>
+        <SideBar />
+        <main className='h-full w-full bg-gray-100 p-8 space-y-5'>
+          {codeItemList.map((item) => (
+            <CodeItem key={item.id} language={item.language} code={item.code} />
+          ))}
+        </main>
+      </div>
+      <Footer />
+    </div>
+  );
+};
 export default CodePage;
