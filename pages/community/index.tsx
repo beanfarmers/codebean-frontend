@@ -45,9 +45,9 @@ const Community = () => {
   return (
     <div>
       <NavBar />
-      <div className='h-screen bg-white flex text-gray-800'>
+      <div className='min-h-screen bg-white flex text-gray-800'>
         <SideBar />
-        <main className='h-full w-full bg-gray-100 p-8 space-y-5'>
+        <main className='min-h-screen w-full bg-gray-100 p-8 space-y-5'>
           {postList.map((item) => (
             <div
               key={item.id}
