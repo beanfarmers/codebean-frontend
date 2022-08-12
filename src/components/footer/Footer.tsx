@@ -10,11 +10,11 @@ const Footer = () => (
       rel='noopener noreferrer'
       className='flex justify-center items-center text-gray-200 space-x-2'
     >
-      <p>CodeBean by</p>
-      <p>
+      <span>CodeBean by</span>
+      <span>
         <GitHubLogo />
-      </p>
-      <p>litsynp</p>
+      </span>
+      <span>litsynp</span>
     </a>
   </footer>
 );
