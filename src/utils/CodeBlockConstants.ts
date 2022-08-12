@@ -1,4 +1,4 @@
-const supportedLanguages = [
+export const supportedLanguages = [
   'abap',
   'actionscript',
   'ada',
@@ -86,7 +86,3 @@ const supportedLanguages = [
   'xquery',
   'yaml',
 ];
-
-module.exports = {
-  supportedLanguages,
-};

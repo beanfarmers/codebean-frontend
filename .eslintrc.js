@@ -21,6 +21,9 @@ module.exports = {
   rules: {
     semi: [2, 'always'],
     'jsx-quotes': ['error', 'prefer-single'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'import/prefer-default-export': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
     'react/prefer-stateless-function': 0,
     'react/jsx-one-expression-per-line': 0,
