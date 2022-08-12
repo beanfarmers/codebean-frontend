@@ -9,7 +9,7 @@ const NavBar = () => (
       url='/!'
       className='my-auto text-2xl italic'
     />
-    <div className='flex ml-12 space-x-10'>
+    <div className='flex ml-12 space-x-10 font-bold'>
       <NavBarTextButton text='Codes' url='/codes' className='my-auto' />
       <NavBarTextButton text='Community' url='/codes' className='my-auto' />
     </div>
