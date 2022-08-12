@@ -1,7 +1,24 @@
-# Codebean
+# Codebean Frontend
 
-## Run the development server:
+The frontend repository for Codebean.
+
+## Package Information
+
+- Next.js
+- TypeScript
+- ESLint & Prettier
+- tailwindcss
+
+## Setup & Run
+
+### 1. Install required packages
 
 ```bash
-pnpm run dev
+$ yarn
+```
+
+### Run the development server:
+
+```bash
+$ yarn run dev
 ```
