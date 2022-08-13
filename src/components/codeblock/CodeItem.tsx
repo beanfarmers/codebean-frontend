@@ -19,14 +19,19 @@ function CodeItem({
 }) {
   return (
     <div className='bg-white border rounded-xl p-5 space-y-3'>
-      <div className='font-bold text-lg w-full flex items-center space-x-2'>
-        <img
-          className='w-8 rounded-full'
-          src='/cat-40px.jpeg'
-          alt='member profile'
-        />
-        <div>
-          <span>litsynp</span>
+      <div className='flex items-center justify-between space-x-2'>
+        <div className='italic bg-blue-100 rounded-lg py-1 px-2 cursor-pointer hover:text-blue-500'>
+          {fileName}
+        </div>
+        <div className='flex items-center space-x-2 cursor-pointer hover:text-blue-500'>
+          <img
+            className='w-8 rounded-full'
+            src='/cat-40px.jpeg'
+            alt='member profile'
+          />
+          <div className='font-bold text-lg'>
+            <span>litsynp</span>
+          </div>
         </div>
       </div>
       <Divider />
