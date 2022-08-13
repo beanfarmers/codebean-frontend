@@ -7,6 +7,7 @@ import {
 } from '@mui/icons-material';
 
 import Divider from '@src/components/codeblock/Divider';
+import TagItemList from '@src/components/tag/TagItemList';
 import { Post } from '@src/utils/types';
 
 const PostItem = ({ item }: { item: Post }) => (
@@ -25,16 +26,7 @@ const PostItem = ({ item }: { item: Post }) => (
     <Divider />
     <div className='text-gray-600 leading-loose'>{item.content}</div>
     <div>
-      <div className='mt-6 text-sm text-blue-500 font-bold space-x-1'>
-        {item.tags.map((tag) => (
-          <span
-            key={tag}
-            className='py-1 px-3 bg-blue-100 rounded-full cursor-pointer hover:bg-blue-300'
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+      <TagItemList tags={item.tags} />
     </div>
     <div>
       <div className='mt-5 space-x-3'>

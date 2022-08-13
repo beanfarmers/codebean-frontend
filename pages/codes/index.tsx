@@ -5,12 +5,13 @@ import SideBar from '@src/components/codeblock/SideBar';
 import Footer from '@src/components/footer/Footer';
 import NavBar from '@src/components/nav-bar/NavBar';
 import { api } from '@src/utils/ApiUtils';
-import { fileNameToLanguage } from '@src/utils/CodeConverterUtils';
+import { SupportedLanguages } from 'react-code-blocks/src/types';
 
 interface CodeSnippetResponse {
   id: number;
   description: string;
   fileName: string;
+  languageCodeName: SupportedLanguages;
   code: string;
 }
 
@@ -37,7 +38,8 @@ const CodePage = () => {
           {codeItemList.map((item) => (
             <CodeItem
               key={item.id}
-              description={fileNameToLanguage(item.fileName)}
+              description={item.description}
+              language={item.languageCodeName}
               fileName={item.fileName}
               code={item.code}
             />
