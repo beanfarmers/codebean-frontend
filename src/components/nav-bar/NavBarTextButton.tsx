@@ -11,7 +11,7 @@ interface Props {
 const NavBarTextButton = ({ text, url, className = '' }: Props) => (
   <Link href={url} passHref>
     <a href='replace' className={className}>
-      <span className='my-auto text-gray-200'>{text}</span>
+      <span className='w-full text-center text-gray-200'>{text}</span>
     </a>
   </Link>
 );
