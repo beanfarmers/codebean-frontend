@@ -3,7 +3,7 @@ import React from 'react';
 import NavBarTextButton from '@src/components/nav-bar/NavBarTextButton';
 
 const NavBar = () => (
-  <div className='flex justify-between h-16 px-5 bg-gray-800'>
+  <nav className='flex justify-between h-16 px-5 bg-gray-800'>
     <div className='flex items-center'>
       <NavBarTextButton
         text='CodeBean'
@@ -20,7 +20,7 @@ const NavBar = () => (
       </div>
     </div>
     <NavBarTextButton text='+' url='/codes/new' className='my-auto text-2xl' />
-  </div>
+  </nav>
 );
 
 export default NavBar;

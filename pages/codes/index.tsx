@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+import { SupportedLanguages } from 'react-code-blocks/src/types';
+
 import CodeItem from '@src/components/codeblock/CodeItem';
 import SideBar from '@src/components/codeblock/SideBar';
-import Footer from '@src/components/footer/Footer';
-import NavBar from '@src/components/nav-bar/NavBar';
 import { api } from '@src/utils/ApiUtils';
-import { SupportedLanguages } from 'react-code-blocks/src/types';
 
 interface CodeSnippetResponse {
   id: number;
@@ -30,23 +29,19 @@ const CodePage = () => {
   }, []);
 
   return (
-    <div>
-      <NavBar />
-      <div className='min-h-screen bg-white flex text-gray-800'>
-        <SideBar />
-        <main className='min-h-screen w-full bg-gray-100 p-8 space-y-5'>
-          {codeItemList.map((item) => (
-            <CodeItem
-              key={item.id}
-              description={item.description}
-              language={item.languageCodeName}
-              fileName={item.fileName}
-              code={item.code}
-            />
-          ))}
-        </main>
-      </div>
-      <Footer />
+    <div className='flex text-gray-800'>
+      <SideBar />
+      <main className='min-h-screen w-full bg-gray-100 p-8 space-y-5'>
+        {codeItemList.map((item) => (
+          <CodeItem
+            key={item.id}
+            description={item.description}
+            language={item.languageCodeName}
+            fileName={item.fileName}
+            code={item.code}
+          />
+        ))}
+      </main>
     </div>
   );
 };
