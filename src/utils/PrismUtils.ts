@@ -5,7 +5,7 @@ import Prism from 'prismjs';
  *
  * @see https://github.com/PrismJS/prism/issues/1881
  */
-export const highlight = (code: string, language: string) => {
+export const prismHighlight = (code: string, language: string) => {
   if (Prism.languages[language]) {
     return Prism.highlight(code, Prism.languages[language], language);
   } else {
