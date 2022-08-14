@@ -7,10 +7,7 @@ export const api: AxiosInstance = axios.create({
 });
 
 api.interceptors.response.use(
-  (res) => {
-    console.log('hi');
-    return res;
-  },
+  (res) => res,
   (err) => {
     if (err instanceof AxiosError) {
       if (err.response) {
