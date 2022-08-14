@@ -1,0 +1,62 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": [
+          "actionscript",
+          "ada",
+          "arduino",
+          "c",
+          "clojure",
+          "csharp",
+          "cpp",
+          "css",
+          "dart",
+          "go",
+          "graphql",
+          "groovy",
+          "html",
+          "java",
+          "javascript",
+          "json",
+          "jsx",
+          "kotlin",
+          "latex",
+          "lisp",
+          "lua",
+          "makefile",
+          "markdown",
+          "matlab",
+          "objectivec",
+          "php",
+          "powershell",
+          "python",
+          "r",
+          "regex",
+          "ruby",
+          "rust",
+          "sass",
+          "scss",
+          "scala",
+          "shell",
+          "sql",
+          "swift",
+          "ts",
+          "tsx",
+          "typescript",
+          "yaml",
+          "markup"
+        ],
+        "plugins": [
+          "line-numbers"
+        ],
+        "theme": "twilight",
+        "css": true
+      }
+    ]
+  ]
+}
