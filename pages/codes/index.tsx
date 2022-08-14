@@ -21,7 +21,7 @@ const CodePage = () => {
     (async () => {
       try {
         const response = await api.get('/code-snippets');
-        setCodeItemList(response.data);
+        setCodeItemList(response.data.content);
       } catch (e) {
         setCodeItemList([]);
       }
