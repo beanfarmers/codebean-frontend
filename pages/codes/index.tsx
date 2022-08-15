@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { SupportedLanguages } from 'react-code-blocks/src/types';
-
 import CodeItem from '@src/components/codeblock/CodeItem';
 import Divider from '@src/components/codeblock/Divider';
 import SideBar from '@src/components/codeblock/SideBar';
 import { api } from '@src/utils/ApiUtils';
-
-interface CodeSnippetResponse {
-  id: number;
-  description: string;
-  fileName: string;
-  languageCodeName: SupportedLanguages;
-  code: string;
-}
+import { CodeSnippetResponse } from '@src/utils/types';
 
 const CodePage = () => {
   const [codeItemList, setCodeItemList] = useState<CodeSnippetResponse[]>([]);
@@ -37,6 +28,7 @@ const CodePage = () => {
           {codeItemList.map((item) => (
             <CodeItem
               key={item.id}
+              codeId={item.id}
               description={item.description}
               language={item.languageCodeName}
               fileName={item.fileName}
