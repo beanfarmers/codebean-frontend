@@ -2,8 +2,8 @@ import React from 'react';
 
 import { atomOneLight, CopyBlock } from 'react-code-blocks';
 import {
-  SupportedLanguages,
   CodeBlockTheme,
+  SupportedLanguages,
 } from 'react-code-blocks/src/types';
 
 const CodeBlock = ({

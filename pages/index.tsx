@@ -3,9 +3,6 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import Footer from '@src/components/footer/Footer';
-import NavBar from '@src/components/nav-bar/NavBar';
-
 const Home: NextPage = () => (
   <div>
     <Head>
