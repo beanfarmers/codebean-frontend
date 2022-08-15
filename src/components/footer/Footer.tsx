@@ -4,18 +4,20 @@ import GitHubLogo from '@src/components/GitHubLogo';
 
 const Footer = () => (
   <footer className='flex flex-1 justify-center items-center py-5 px-0 bg-gray-800'>
-    <a
-      href='https://github.com/litsynp'
-      target='_blank'
-      rel='noopener noreferrer'
-      className='flex justify-center items-center text-gray-200 space-x-2'
-    >
-      <span>CodeBean by</span>
+    <div className='flex justify-center items-center text-gray-200 space-x-2'>
       <span>
-        <GitHubLogo />
+        <span className='italic'>CodeBean</span> by
       </span>
-      <span>litsynp</span>
-    </a>
+      <a
+        href='https://github.com/litsynp'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='flex items-center space-x-2'
+      >
+        <GitHubLogo />
+        <span>litsynp</span>
+      </a>
+    </div>
   </footer>
 );
 

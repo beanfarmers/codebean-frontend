@@ -7,7 +7,7 @@ function SideBar() {
   return (
     <div className='min-h-screen basis-1/3 min-w-[16rem] max-w-[20rem] border-r space-y-8 py-8 px-8 bg-white text-neutral-800'>
       <div className='space-y-3'>
-        <div className='font-bold text-lg w-full flex items-center space-x-2'>
+        <div className='font-bold w-full flex items-center space-x-2'>
           <img
             className='w-8 rounded-full'
             src='/cat-40px.jpeg'
@@ -22,7 +22,7 @@ function SideBar() {
         </ul>
       </div>
       <div className='space-y-3'>
-        <div className='font-bold text-lg'># Popular Tags</div>
+        <div className='font-bold'># Popular Tags</div>
         <Divider />
         <ul className='space-y-2 text-gray-500'>
           <SideBarHoverableMenu text='# Python' />

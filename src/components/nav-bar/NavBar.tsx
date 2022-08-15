@@ -8,7 +8,7 @@ const NavBar = () => (
       <NavBarTextButton
         text='CodeBean'
         url='/'
-        className='text-center w-full text-2xl italic'
+        className='text-center w-full text-xl italic'
       />
       <div className='flex ml-12 space-x-10 font-bold'>
         <NavBarTextButton text='Codes' url='/codes' className='my-auto' />
@@ -19,7 +19,7 @@ const NavBar = () => (
         />
       </div>
     </div>
-    <NavBarTextButton text='+' url='/codes/new' className='my-auto text-2xl' />
+    <NavBarTextButton text='+' url='/codes/new' className='my-auto text-xl' />
   </nav>
 );
 
