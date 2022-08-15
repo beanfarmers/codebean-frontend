@@ -1,6 +1,6 @@
-# Codebean Frontend
+# CodeBean Frontend
 
-The frontend repository for Codebean.
+The frontend repository for _CodeBean_.
 
 ## Package Information
 
@@ -22,7 +22,7 @@ The frontend repository for Codebean.
 $ yarn
 ```
 
-### Run the development server:
+### 2. Run the development server:
 
 ```bash
 $ yarn run dev
