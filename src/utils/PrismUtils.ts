@@ -7,7 +7,13 @@ import Prism from 'prismjs';
  */
 export const prismHighlight = (code: string, language: string) => {
   if (Prism.languages[language]) {
-    return Prism.highlight(code, Prism.languages[language], language);
+    return Prism.highlight(code, Prism.languages[language], language)
+      .split('\n')
+      .map(
+        (line, i) =>
+          `<span class='code-editor-line-number'>${i + 1}</span>${line}`,
+      )
+      .join('\n');
   } else {
     return Prism.util.encode(code);
   }

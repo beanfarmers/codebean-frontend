@@ -6,7 +6,6 @@ import 'prismjs/themes/prism.css';
 import Select from 'react-select';
 import Editor from 'react-simple-code-editor';
 
-import Divider from '@src/components/codeblock/Divider';
 import { api } from '@src/utils/ApiUtils';
 import { fileExtensionToLanguage, prismHighlight } from '@src/utils/PrismUtils';
 
@@ -114,64 +113,64 @@ const NewCodePage = () => {
   };
 
   return (
-    <div className='min-h-screen p-5 bg-gray-100 flex-row'>
-      <div className='flex flex-col bg-white p-5 space-y-5 border rounded-lg'>
-        <div className='flex flex-row space-x-2'>
+    <div className='min-h-screen p-5 flex-row'>
+      <div className='flex flex-col max-w-[64rem] mx-auto'>
+        <div className='flex flex-row space-x-2 justify-between p-2 border rounded-x-lg rounded-t-lg bg-gray-50'>
           <input
             id='filename'
             name='filename'
             type='text'
-            placeholder='File name'
-            className='w-full py-1 px-2 text-lg italic text-gray-700'
+            placeholder='File name including extension...'
+            className='w-[20rem] py-1 px-2 text-gray-700 border rounded'
             onInput={onFileNameInput}
             value={fileName}
           />
           <div className='w-[10rem]'>
             <Select
               placeholder='Font Size'
-              defaultValue={fontOptions[3]}
+              defaultValue={fontOptions[2]}
               onChange={onSelectFontSize}
               isSearchable
               options={fontOptions}
             />
           </div>
         </div>
-        <Divider />
-        <Editor
-          value={inputCode}
-          onValueChange={onCodeChange}
-          className='line-numbers'
-          preClassName='line-numbers'
-          highlight={highlight}
-          padding={10}
-          style={{
-            width: '100%',
-            backgroundColor: 'white',
-            fontFamily: '"Fira inputCode", "Fira Mono", monospace',
-            fontSize: fontSize.value,
-          }}
-        />
+        <div className='code-editor-container h-[25rem] overflow-y-scroll'>
+          <Editor
+            value={inputCode}
+            onValueChange={onCodeChange}
+            className='code-editor min-h-[25rem]'
+            textareaId='code-area'
+            highlight={highlight}
+            padding={10}
+            style={{
+              backgroundColor: 'white',
+              fontFamily: '"Fira inputCode", "Fira Mono", monospace',
+              fontSize: fontSize.value,
+            }}
+          />
+        </div>
         <textarea
-          placeholder='Description'
-          className='w-full py-1 px-2 border rounded bg-gray-100 border-gray-300'
+          placeholder='Code snippet description...'
+          className='w-full max-h-[15rem] py-2 px-4 border rounded-b-lg rounded-x-lg bg-gray-50 border-gray-300 resize-none'
           onInput={onTextAreaInput}
           onKeyUp={onTextAreaKeyUp}
           value={description}
         />
-        <div className='flex justify-center space-x-10'>
+        <div className='flex justify-center space-x-10 mt-5 font-bold'>
           <button
             type='button'
-            className='w-20 text-neutral-800 bg-gray-200 rounded-lg py-1 px-2 hover:text-blue-500 hover:bg-blue-100'
+            className='w-32 text-neutral-800 rounded-lg py-2 px-6 border border-gray-300 bg-gray-50 hover:bg-gray-100'
             onClick={onClickCancel}
           >
             Cancel
           </button>
           <button
             type='submit'
-            className='w-20 text-neutral-800 bg-blue-100 rounded-lg py-1 px-2 hover:text-blue-500 hover:bg-blue-200'
+            className='text-neutral-800 rounded-lg py-2 px-6 border border-gray-300 text-neutral-50 bg-green-600 hover:bg-green-700'
             onClick={onClickUpload}
           >
-            Upload
+            Upload public code snippet
           </button>
         </div>
       </div>

@@ -4,17 +4,55 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.code-editor {
+    counter-reset: line;
+    line-height: 1.5;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+}
+
+.code-editor #code-area {
+    padding-left: 60px !important;
+    outline: none;
+}
+
+.code-editor pre {
+    padding-left: 60px !important;
+}
+
+/* Display line number */
+.code-editor .code-editor-line-number {
+    position: absolute;
+    left: 0px;
+    color: slategray;
+    text-align: right;
+    width: 40px;
+}
+
+.code-editor-container ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+.code-editor-container ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
