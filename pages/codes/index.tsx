@@ -8,13 +8,49 @@ import { CodeSnippetResponse } from '@src/utils/types';
 
 const CodePage = () => {
   const [codeItemList, setCodeItemList] = useState<CodeSnippetResponse[]>([]);
+  const [page, setPage] = useState<number>(1);
+  const [size] = useState<number>(5);
+  const [isEndOfPage, setIsEndOfPage] = useState<boolean>(false);
+
+  const fetchCodeItemList = ({
+    page,
+    size,
+  }: {
+    page: number;
+    size: number;
+  }) => {
+    return api.get('/code-snippets', {
+      params: {
+        page,
+        size,
+      },
+    });
+  };
+
+  const onClickLoadMore = () => {
+    (async () => {
+      try {
+        const response = await fetchCodeItemList({
+          page,
+          size,
+        });
+        setCodeItemList([...codeItemList, ...response.data.content]);
+        setIsEndOfPage(response.data.last);
+        setPage((p) => p + 1);
+      } catch (err) {}
+    })();
+  };
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await api.get('/code-snippets');
-        setCodeItemList(response.data.content);
-      } catch (e) {
+        const response = await fetchCodeItemList({
+          page: 0,
+          size,
+        });
+        setCodeItemList([...response.data.content]);
+        setIsEndOfPage(response.data.last);
+      } catch (err) {
         setCodeItemList([]);
       }
     })();
@@ -36,10 +72,21 @@ const CodePage = () => {
             />
           ))}
         </div>
-        <Divider />
-        <div className='text-center font-bold cursor-pointer py-2 rounded bg-white text-blue-500 border hover:bg-gray-100'>
-          More
-        </div>
+        {!isEndOfPage && (
+          <>
+            <Divider />
+            <div className='flex justify-center'>
+              <button
+                type='button'
+                className='text-center font-bold cursor-pointer w-[12rem] py-2 rounded border bg-white text-blue-500 hover:bg-gray-100'
+                onClick={onClickLoadMore}
+                disabled={isEndOfPage}
+              >
+                More
+              </button>
+            </div>
+          </>
+        )}
       </main>
     </div>
   );
