@@ -5,7 +5,7 @@ import SideBarHoverableMenu from '@src/components/codeblock/SideBarHoverableMenu
 
 function SideBar() {
   return (
-    <div className='min-h-screen basis-1/3 min-w-[16rem] max-w-[20rem] border-r space-y-8 py-8 px-8 text-neutral-800'>
+    <div className='sticky top-0 self-start basis-1/3 min-w-[16rem] max-w-[20rem] border-r space-y-8 py-8 px-8 text-neutral-800'>
       <div className='space-y-3'>
         <div className='font-bold w-full flex items-center space-x-2'>
           <img

@@ -6,7 +6,7 @@ import NavBar from '@src/components/nav-bar/NavBar';
 const FullLayout = ({ children }: { children: ReactElement }) => (
   <div className='text-sm'>
     <NavBar />
-    <main className='min-h-screen bg-white'>{children}</main>
+    <main className='bg-white'>{children}</main>
     <Footer />
   </div>
 );
