@@ -3,7 +3,7 @@ import React from 'react';
 import GitHubLogo from '@src/components/GitHubLogo';
 
 const Footer = () => (
-  <footer className='flex flex-1 justify-center items-center py-5 px-0 bg-gray-800'>
+  <footer className='flex flex-1 justify-center items-center h-16 py-5 px-0 bg-gray-800'>
     <div className='flex justify-center items-center text-gray-200 space-x-2'>
       <span>
         <span className='italic'>CodeBean</span> by

@@ -113,7 +113,7 @@ const NewCodePage = () => {
   };
 
   return (
-    <div className='min-h-screen p-5 flex-row'>
+    <div className='h-[calc(100vh-8rem)] p-5 flex-row'>
       <div className='flex flex-col max-w-[64rem] mx-auto'>
         <div className='flex flex-row space-x-2 justify-between p-2 border rounded-x-lg rounded-t-lg bg-gray-50'>
           <input
